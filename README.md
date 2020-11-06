@@ -24,17 +24,17 @@ avaible endpoint GET http://localhost:8000/service-area?address={address}
 #### Example
 
 ```bash
-$ curl -X GET http://host:port/service-area/address=White Bear Yarda
+$ curl -X GET http://host:port/service-area/address=EC1R5DF
 
 {
     "status": "OK",
-    "search": "White Bear Yarda",
+    "search": "EC1R5DF",
     "location": {
-        "address1": "White Bear Yard, Holborn, London EC1R, UK",
-        "lat": 51.5222691,
-        "lng": -0.1098115,
+        "address1": "Clerkenwell Rd, Holborn, London EC1R 5DF, UK",
+        "lat": 51.5221993,
+        "lng": -0.1097618,
         "city": "London",
-        "postCode": "EC1R",
+        "postCode": "EC1R 5DF",
         "serviceArea": "LONCENTRAL"
     }
 }
