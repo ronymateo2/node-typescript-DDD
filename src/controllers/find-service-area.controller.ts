@@ -15,7 +15,7 @@ export const findServiceAreaController = (useCase: FindServiceArea) => async (
       if (err.name === "NotFoundError") {
         res.json({
           status: "NOT_FOUND",
-          search: req.query["address"],
+          search: "Non-existing address",
         } as ServiceAreaResponse);
       } else {
         res.json({

@@ -1,0 +1,10 @@
+version: "3.1"
+services:
+  app:
+    container_name: app
+    build: .
+    environment:
+      - PORT=8080
+      - GOOGLE_MAP_API=AIzaSyCbViDjAg2NA56n4HHU3rYqFVoehkdAd04
+    ports:
+      - "8080:8080"

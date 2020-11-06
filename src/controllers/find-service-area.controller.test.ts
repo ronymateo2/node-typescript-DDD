@@ -59,7 +59,7 @@ describe("find-service-area.controller", () => {
     const spyStatus = jest.spyOn(fakeRespone, "status");
     const spyJson = jest.spyOn(fakeRespone, "json");
 
-    const fakeRequest = { query: { address: "dummy_address" } };
+    const fakeRequest = { query: { address: "any_address" } };
 
     await findServiceAreaController(useCase)(
       fakeRequest as any,
@@ -68,7 +68,7 @@ describe("find-service-area.controller", () => {
 
     expect(spyStatus).toHaveBeenCalledWith(500);
     expect(spyJson).toHaveBeenCalledWith({
-      search: "dummy_address",
+      search: "Non-existing address",
       status: "NOT_FOUND",
     });
   });
