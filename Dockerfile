@@ -2,11 +2,11 @@
 FROM node:current-alpine
 WORKDIR /usr/src/app
 
-COPY package.json package-lock.json tsconfig.json ./
+COPY package.json package-lock.json ./
 
 RUN npm install
 
-COPY ./src ./src
+COPY . .
 
 RUN npm run build
 
