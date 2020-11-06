@@ -1,3 +1,8 @@
+import dotenv from "dotenv";
+// TODO: move to script to load on demand
+if (process.env.NODE_ENV !== "production") {
+  dotenv.config();
+}
 import express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
