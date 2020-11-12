@@ -22,8 +22,8 @@ export default (app: Router) => {
 
     const useCase = useCaseGetServiceArea(context);
 
-    const controllerWithUseCase = findServiceAreaController(useCase);
+    const controller = findServiceAreaController(useCase);
 
-    await controllerWithUseCase(req, res);
+    await controller(req, res);
   });
 };

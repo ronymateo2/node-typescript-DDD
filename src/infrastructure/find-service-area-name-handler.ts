@@ -1,4 +1,5 @@
 import GeoJsonGeometriesLookup from "geojson-geometries-lookup";
+import { Coordinate } from "../domain/service-area/data";
 import { FindServiceAreaName } from "../domain/service-area/find-service-area-name";
 import data from "./data/formatted-districts.json";
 
@@ -7,8 +8,7 @@ export const createGeoJsonLookUp = (): GeoJsonLookUp => {
     type: "FeatureCollection",
     features: data.features,
   };
-  const glookup = new GeoJsonGeometriesLookup(geojson);
-  return glookup;
+  return new GeoJsonGeometriesLookup(geojson);
 };
 
 export type GeoJsonLookUp = {
@@ -18,7 +18,7 @@ export type GeoJsonLookUp = {
 export function findServiceAreaNameHandler(
   glookup: GeoJsonLookUp
 ): FindServiceAreaName {
-  return ({ lat, lng }: { lat: number; lng: number }) => {
+  return ({ lat, lng }: Coordinate) => {
     const point = {
       type: "Point",
       coordinates: [lng, lat],

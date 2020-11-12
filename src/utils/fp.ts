@@ -7,9 +7,11 @@ export class Right<T> {
   public constructor(val: T) {
     this._value = val;
   }
+
   public map<TMap>(fn: (val: T) => TMap) {
     return Right.of(<TMap>fn(this._value));
   }
+
   public fold(f: Function, g: Function) {
     return g(this._value);
   }
@@ -19,6 +21,7 @@ export class Left<T> {
   public static of<TVal>(val: TVal) {
     return new Left(val);
   }
+
   private _value: T;
 
   public constructor(val: T) {

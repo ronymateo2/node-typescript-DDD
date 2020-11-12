@@ -31,7 +31,6 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "geojson-geometries-lookup": "^0.5.0",
-    "node-fetch": "^2.6.1",
-    "redis": "^3.0.2"
+    "node-fetch": "^2.6.1"
   }
 }
